@@ -1,8 +1,8 @@
 package visvalingam
 
 import (
-	"simplex/geom"
-	"simplex/struct/heap"
+	"github.com/intdxdt/geom"
+	"github.com/intdxdt/heap"
 )
 
 //type visvalingam

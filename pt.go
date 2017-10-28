@@ -1,6 +1,6 @@
 package visvalingam
 
-import "simplex/geom"
+import "github.com/intdxdt/geom"
 
 type Pt struct {
 	*geom.Point

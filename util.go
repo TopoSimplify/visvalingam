@@ -1,7 +1,7 @@
 package visvalingam
 
 import (
-	"simplex/geom"
+	"github.com/intdxdt/geom"
 	"math"
 )
 

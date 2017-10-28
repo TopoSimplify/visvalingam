@@ -1,9 +1,8 @@
 package visvalingam
 
 import (
-	"simplex/geom"
-	"simplex/struct/item"
-	"simplex/util/math"
+	"github.com/intdxdt/geom"
+	"github.com/intdxdt/math"
 )
 
 type Triangle struct {
