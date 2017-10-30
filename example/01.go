@@ -2,7 +2,7 @@ package main
 
 import (
 	"simplex/visvalingam"
-	"simplex/geom"
+	"github.com/intdxdt/geom"
 	"fmt"
 )
 

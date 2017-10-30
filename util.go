@@ -1,8 +1,8 @@
 package visvalingam
 
 import (
-	"github.com/intdxdt/geom"
 	"math"
+	"github.com/intdxdt/geom"
 )
 
 //triangle area

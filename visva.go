@@ -24,7 +24,7 @@ func NewVisvalingam(coords []*geom.Point) *Visvalingam {
 
 //build
 func (vis *Visvalingam) build() *Visvalingam {
-	vis.heap = heap.NewHeap(heap.NewHeapType().AsMin())
+	vis.heap = heap.NewHeap(TriangleAreaCompare, heap.NewHeapType().AsMin())
 	vis.createTriangles().updateTrianglePtrs()
 	vis.buildState = true
 	return vis
