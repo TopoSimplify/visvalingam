@@ -1,6 +1,0 @@
-# Visvalingam Algorithm
-
-##
-
-
-
