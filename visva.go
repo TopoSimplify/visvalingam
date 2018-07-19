@@ -14,10 +14,10 @@ type Visvalingam struct {
 }
 
 //new visvalingam
-func NewVisvalingam(coords []*geom.Point) *Visvalingam {
+func NewVisvalingam(coords []geom.Point) *Visvalingam {
 	pts := make([]*Pt, len(coords))
 	for i, coord := range coords {
-		pts[i] = &Pt{Point: coord.Clone(), area: 0.0}
+		pts[i] = &Pt{Point: coord, area: 0.0}
 	}
 	return &Visvalingam{coords: pts}
 }
@@ -30,7 +30,7 @@ func (vis *Visvalingam) build() *Visvalingam {
 	return vis
 }
 
-func (vis *Visvalingam) Simplify(threshold float64) []*geom.Point {
+func (vis *Visvalingam) Simplify(threshold float64) []geom.Point {
 	if !vis.buildState {
 		vis.build()
 	}
@@ -71,7 +71,7 @@ func (vis *Visvalingam) Simplify(threshold float64) []*geom.Point {
 
 	}
 
-	simplx := make([]*geom.Point, 0)
+	simplx := make([]geom.Point, 0)
 	for _, pt := range vis.coords {
 		if pt.area >= threshold {
 			simplx = append(simplx, pt.Point)
@@ -114,6 +114,6 @@ func (vis *Visvalingam) updateTrianglePtrs() *Visvalingam {
 
 func (vis *Visvalingam) update(t *Triangle) {
 	vis.heap.Remove(t)
-	t.b.area = Area(t.a.Point, t.b.Point, t.c.Point)
+	t.b.area = Area(&t.a.Point, &t.b.Point, &t.c.Point)
 	vis.heap.Push(t)
 }

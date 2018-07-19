@@ -13,7 +13,7 @@ type Triangle struct {
 
 func NewTriangle(pts []*Pt) *Triangle {
 	var a, b, c = pts[0], pts[1], pts[2]
-	b.area = Area(a.Point, b.Point, c.Point)
+	b.area = Area(&a.Point, &b.Point, &c.Point)
 	return &Triangle{a: a, b: b, c: c, prev: nil, next: nil}
 }
 
@@ -30,5 +30,5 @@ func TriangleAreaCompare(t, o interface{}) int {
 }
 
 func (t *Triangle) String() string {
-	return geom.NewPolygon([]*geom.Point{t.a.Point, t.b.Point, t.c.Point}).WKT()
+	return geom.NewPolygon([]geom.Point{t.a.Point, t.b.Point, t.c.Point}).WKT()
 }
