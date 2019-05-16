@@ -13,6 +13,6 @@ func main() {
 
 	var simplx = visva.Simplify(res)
 
-	fmt.Println(geom.NewLineString(line).WKT())
-	fmt.Println(geom.NewLineString(simplx).WKT())
+	fmt.Println(geom.NewLineString(geom.Coordinates(line)).WKT())
+	fmt.Println(geom.NewLineString(geom.Coordinates(simplx)).WKT())
 }

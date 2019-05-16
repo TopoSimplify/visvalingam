@@ -30,5 +30,5 @@ func TriangleAreaCompare(t, o interface{}) int {
 }
 
 func (t *Triangle) String() string {
-	return geom.NewPolygon([]geom.Point{t.a.Point, t.b.Point, t.c.Point}).WKT()
+	return geom.NewPolygon(geom.Coordinates([]geom.Point{t.a.Point, t.b.Point, t.c.Point})).WKT()
 }
